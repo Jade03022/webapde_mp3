@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <link href="addMoviesAdminPage.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class=navigation>
+            <div id="brand">
+                <a href = "brand_click"><img src="logo.png" height=60px; width=120px;/></a>
+                
+                <div class="dropdown">
+                    <div class="movies">Movies</div>
+                    <div class="moviesmenu">
+                        <a href="nowShowingAdminPage">Now Showing</a>
+                        <a href="upcomingMoviesAdminPage">Upcoming Movies</a>
+                    </div>
+                </div>
+                
+                <div class="cinemas"><a href="cinemasAdminPage" style="text-decoration: none; color: white">Cinemas</a></div>
+                
+                <div class="dropdown">
+                    <div class="screening">Admin</div>
+                    <div class="screeningmenu">
+                        <a href="viewMoviesAdminPage">View Movies</a>
+                        <a href="addMoviesAdminPage">Add Movies</a>
+                    </div>
+                </div>              
+            </div>
+            <div class="dropdown">
+                <span class="moderator">Welcome, admin! ▼</span>
+                <div class="logout">
+                    <a href="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main">
+            <div class="transbox">
+                <form action="addmovie" method="post" enctype="multipart/form-data">
+                    <div style="font-size: 28px; text-align: left; padding: 10px; color:white">Add Movie</div>
+                    <div style="font-size: 20px; text-align: left; padding: 10px; color:white">
+                        Movie Title: <input type="text" name="movietitle" style="height:24px; width:300px;" required>
+                    </div>
+                    <div style="font-size: 20px; text-align: left; padding: 10px; color:white">Release Date: <input type="date" name="releasedate" style="text-align: left; height: 24px; width: 270px;" required></div>
+                    <div style="font-size: 20px; text-align: left; padding: 10px; color:white">
+                        Rated: 
+                            <input type="radio" name="rated" value="G" checked> G
+                            <input type="radio" name="rated" value="PG"> PG    
+                            <input type="radio" name="rated" value="R-13"> R-13   
+                            <input type="radio" name="rated" value="R-16" style="margin-bottom: 20px"> R-16 <br>  
+                        Duration: <input type="text" name="duration" style="height:24px; width:150px" required>
+                    </div>
+                    <div style="font-size: 20px; text-align: left; padding: 10px; color:white">
+                        Genre: <input type="text" name="genre" style="height:24px; width:350px;" required>
+                    </div>
+                    <div style="font-size: 20px; text-align: left; padding: 10px; color:white">
+                        Summary:<br> <textarea rows="3" cols="57" name="summary" style="resize:none;" required></textarea>
+                    </div>
+                    <div style="font-size: 18px; text-align: left; padding: 10px; color:white">
+                        Critic's Rating: <input type="number" name="critrate" style="height:18px; width:80px" min="0" max="5" required>
+                        User's Rating: <input type="number" name="userrate" style="height:18px; width:80px" min="0" max="5" required>
+                    </div>
+                    <div style="font-size: 20px; text-align: left; padding: 10px; color:white">
+                        Main Casts: <input type="text" name="cast" style="height:24px; width:320px;" required><br>
+                        Director: <input type="text" name="director" style="height:24px; width:350px;" required>
+                    </div>
+                    <div style="font-size: 16px; text-align: center; padding: 10px; color:white">
+                        Upload Image: <input type="file" name="imgmovie" style="height: 16px; width:295px;" required>
+                    </div>
+                    <input type="submit" value="Submit" style="margin-left: 38%; width: 100px; height: 30px; margin-top: 5px;">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

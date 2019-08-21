@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link href="cinemasByCityUserPage.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class=navigation>
+            <div id="brand">
+                <a href = "brand_click"><img src="logo.png" height=60px; width=120px;/></a>
+                
+                <div class="dropdown">
+                    <div class="movies">Movies</div>
+                    <div class="moviesmenu">
+                        <a href="nowShowingUserPage">Now Showing</a>
+                        <a href="upcomingMoviesUserPage">Upcoming Movies</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <div class="cinemas"><a href="cinemasuser" style="text-decoration: none; color:white;">Cinemas</a></div>
+                    <div class="cinemasmenu">
+                        <a href="cinemasByCityUserPage">By City</a>
+                        <a href="cinemasByMallUserPage">By Mall</a>
+                    </div>
+                </div>           
+            </div>
+            <div class="login" style="margin-right: 30px"><a href="loginpage" style="text-decoration: none; color:white">Login</a></div>
+        </div>
+
+        <div class="main">
+            <div class="transbox">
+                <div class="main-nav-config">
+                    <div id="showing">
+                        <a style="font-size: 24px; margin-bottom: 30px">IN THEATERS</a>
+                    </div>
+                </div>
+                <div class="header" style="margin-left: 380px">METRO MANILA</div>
+                <div class="places">
+                    <form action="cinemaCityUserPage" method="get" enctype="multipart/form-data">
+                        <input type="submit" name="city" class="city" value="Las Pinas" readonly>
+                        <input type="submit" name="city" class="city" value="Caloocan" readonly>
+                        <input type="submit" name="city" class="city" value="Malabon" readonly>
+                        <input type="submit" name="city" class="city" value="Makati" readonly>
+                        <input type="submit" name="city" class="city" value="Mandaluyong" readonly>
+                        <input type="submit" name="city" class="city" value="Manila" readonly>
+                        <input type="submit" name="city" class="city" value="Marikina" readonly>
+                        <input type="submit" name="city" class="city" value="Muntinlupa" readonly>
+                        <input type="submit" name="city" class="city" value="Paranaque" readonly>
+                        <input type="submit" name="city" class="city" value="Pasay" readonly>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

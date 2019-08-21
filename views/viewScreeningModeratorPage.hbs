@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <link href="viewScreeningModeratorPage.css" rel="stylesheet">
+        <script src="jquery-3.3.1.js"></script>
+        <script>
+            $(document).ready(()=>{
+                $("button#edit").click(function(){
+                    let userid = $(this).attr("data-id")
+                    $("#editid").val(userid)
+                    $("#editform").submit()
+                })
+                
+                $("button#delete").click(function(){
+                    let userid = $(this).attr('data-id')
+                    $("#deleteid").val(userid)
+                    $("#deleteform").submit()
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class=navigation>
+            <div id="brand">
+                <a href = "brand_click"><img src="logo.png" height=60px; width=120px;/></a>
+                
+                <div class="dropdown">
+                    <div class="movies">Movies</div>
+                    <div class="moviesmenu">
+                        <a href="nowShowingModeratorPage">Now Showing</a>
+                        <a href="upcomingMoviesModeratorPage">Upcoming Movies</a>
+                    </div>
+                </div>
+                
+                <div class="cinemas"><a href="cinemasmoderator" style="text-decoration: none; color:white;">Cinemas</a></div>
+                
+                <div class="dropdown">
+                    <div class="screening">Screening</div>
+                    <div class="screeningmenu">
+                        <a href="viewScreeningModeratorPage">View Screenings</a>
+                        <a href="addScreeningModeratorPage">Add Screening</a>
+                    </div>
+                </div>              
+            </div>
+            <div class="dropdown">
+                <span class="moderator">Welcome, {{username}}! ▼</span>
+                <div class="logout">
+                    <a href="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main-nav-config">
+                <div id="showing">
+                    <a style="font-size: 24px">NOW SHOWING</a>
+                    <a style="font-size: 16px; padding-left: 30px;">{{date}}</a>
+                </div>
+                <div id="searchbar">
+                    <a id="search">Search: 
+                        <form action="/searchScreen" method="post" enctype="multipart/form-data">
+                           <input type="date" name="dater"> 
+                           <input type="hidden" name="mallman" value="{{mallman}}">
+                           <input type="submit">
+                       </form>
+                    </a><br>
+                </div>
+            </div>
+            
+            {{#each screens}}
+            <div class="listOfCinemas">
+                <div class="cinema">
+                    {{#movies}}
+                    <div class="screening">
+                        <div class="movie">
+                            <div class="img"><img src="{{image}}" id="movieimg"></div>
+                            <div class="details">
+                                <div class="top">
+                                    <div class="top1">
+                                        <span class = "movie_title">{{title}}</span><br>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <span class = "tag">Showtime</span>
+                                    <div class = "showtime">
+                                        {{#schedules}}
+                                            {{#each showtimes}}
+                                                <div class = "time">
+                                                    {{this}}
+                                                </div>
+                                            {{/each}}
+                                        {{/schedules}}
+                                    </div>
+                                </div>
+                                
+                                <div class="buttons">
+                                    <button id="edit" data-id="{{_id}}">
+                                        Edit
+                                    </button>
+                                    <button id="delete" data-id="{{_id}}">
+                                        Delete
+                                    </button>
+                                </div>
+
+                                <form id="editform" action="editScreeningModeratorPage" method="get">
+                                    <input type="hidden" name="id" id="editid">
+                                </form>
+
+                                <form id="deleteform" action="deletescreen" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" id="deleteid">
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    {{/movies}}
+                </div>
+            </div>
+            {{/each}}  
+            
+        </div>
+    </body>
+</html>

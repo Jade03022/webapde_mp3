@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link href="login.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main">
+            <div class=navigation>
+                <div id="brand">
+                    <a href = "brand_click"><img src="logo.png" height=60px; width=120px;/></a>
+
+                    <div class="dropdown">
+                        <div class="movies">Movies</div>
+                        <div class="moviesmenu">
+                            <a href="nowShowingUserPage">Now Showing</a>
+                            <a href="upcomingMoviesUserPage">Upcoming Movies</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="cinemas"><a href="cinemasuser" style="text-decoration: none; color:white">Cinemas</a></div>
+                        <div class="cinemasmenu">
+                            <a href="nowShowingUserPage">By City</a>
+                            <a href="upcomingMoviesUserPage">By Mall</a>
+                        </div>
+                    </div>           
+                </div>
+            </div>
+            <div class="transbox">
+                <div>
+                    <a href = "brand_click"><img src="logo.png" height=160px; width=320px;/></a>
+                </div>
+                <div>
+                    <form action="login" method="post" enctype="multipart/form-data">
+                        <div style="font-size: 20px; text-align: left; padding: 10px; color:white">
+                            Username: <input type="text" name="un" style="height:24px; width:300px;">
+                        </div>
+                        <div style="font-size: 20px; text-align: left; padding: 10px; color:white">
+                            Password: <input type="password" name="pw" style="height:24px; width:300px; margin-left: 5px">
+                        </div>
+                        <input type="submit" value="Login" style="margin-left: 38%; width: 100px; height: 30px; margin-top: 5px;">
+                    </form>
+                </div>
+                <div style="color: red">{{invalid_credentials}}</div>
+            </div>
+        </div>
+    </body>
+</html>

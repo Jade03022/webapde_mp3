@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <link href="cinemasByMallUserPage.css" rel="stylesheet">
+        <!--<script src = "jquery-3.4.1.js"></script>
+        
+        <script>
+            let div_cinema, div_cinemaname, div_screening, div_top, div_img, div_details, div_middle, div_casts, div_director, div_bottom;
+            let span_movie_title, span_rated_genre_duration, span_critic_rating, span_user_rating, span_cast_people, span_director_people, span_showtime;
+            let span_main_cast_header, span_director_header, span_showtimes_header;
+            
+            $(document).ready(function(){          
+                div_cinema = document.createElement("div");
+                div_cinema.className = "cinema";
+
+                div_cinemaname = document.createElement("div");
+                div_cinemaname.className = "cinemaname";
+
+                div_screening = document.createElement("div");
+                div_screening.className = "screening";
+
+                div_top = document.createElement("div");
+                div_top.className = "top";
+
+                div_img = document.createElement("div");
+                div_img.className = "img";
+
+                div_details = document.createElement("div");
+                div_details.className = "details";
+
+                div_middle = document.createElement("div");
+                div_middle.className = "middle";
+
+                div_casts = document.createElement("div");
+                div_casts.className = "casts";
+
+                div_director = document.createElement("div");
+                div_director.className = "director";
+
+                div_bottom = document.createElement("div");
+                div_bottom.className = "bottom";
+                
+                span_movie_title = document.createElement("span");
+                span_movie_title.className = "movie_title";
+
+                span_rated_genre_duration = document.createElement("span");
+                span_rated_genre_duration.className = "rated_genre_duration";
+
+                span_critic_rating = document.createElement("span");
+                span_critic_rating.className = "critic_rating";
+
+                span_user_rating = document.createElement("span");
+                span_user_rating.className = "user_rating";
+
+                span_cast_people = document.createElement("span");
+                span_cast_people.className = "cast_people";
+
+                span_director_people = document.createElement("span");
+                span_director_people.className = "director_people";
+
+                span_showtime = document.createElement("span");
+                span_showtime.className = "showtime";
+
+                $(span_movie_title).html("The Lion King" + "<br>");
+                $(span_rated_genre_duration).html("G | Comedy | 2hrs 5mins" + "<br>");
+                $(span_critic_rating).html("4.2" + "<br>");
+                $(span_user_rating).text("5.0");
+                
+                div_details.append(span_movie_title);
+                div_details.append(span_rated_genre_duration);
+                div_details.append(span_critic_rating);
+                div_details.append(span_user_rating);
+
+                $(div_img).text("Picture");
+                
+                div_top.append(div_img);
+                div_top.append(div_details);
+
+                span_main_cast_header = document.createElement("span");
+                span_director_header = document.createElement("span");
+                span_showtimes_header = document.createElement("span");
+                $(span_main_cast_header).html("Main Casts" + "<br>");
+                $(span_director_header).html("Directors" + "<br>");
+                $(span_showtimes_header).html("Showtimes" + "<br>");
+
+                $(span_cast_people).text("Kyle Ty, Jake de Leon, Jeddryc Tiu");
+                
+                div_casts.append(span_main_cast_header);
+                div_casts.append(span_cast_people);
+
+                $(span_director_people).text("Karl King");
+                
+                div_director.append(span_director_header);
+                div_director.append(span_director_people);
+
+                div_middle.append(div_casts);
+                div_middle.append(div_director);
+
+                $(span_showtime).text("9:00 AM");
+                
+                div_bottom.append(span_showtimes_header);
+                div_bottom.append(span_showtime);
+
+                div_screening.append(div_top);
+                div_screening.append(div_middle);
+                div_screening.append(div_bottom);
+                
+                $(div_cinemaname).text("SM Mall of Asia Cinema 1");
+                
+                div_cinema.append(div_cinemaname);
+                div_cinema.append(div_screening);
+                
+                $(div_cinema).hide();
+                $("#cinemas_container").append(div_cinema);
+                $(div_cinema).show();
+            })
+        </script>-->
+    </head>
+    <body>
+        <div class=navigation>
+            <div id="brand">
+                <a href = "brand_click"><img src="logo.png" height=60px; width=120px;/></a>
+                
+                <div class="dropdown">
+                    <div class="movies">Movies</div>
+                    <div class="moviesmenu">
+                        <a href="nowShowingUserPage">Now Showing</a>
+                        <a href="upcomingMoviesUserPage">Upcoming Movies</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <div class="cinemas"><a href="cinemasuser" style="text-decoration: none; color:white">Cinemas</a></div>
+                    <div class="cinemasmenu">
+                        <a href="cinemasByCityUserPage">By City</a>
+                        <a href="cinemasByMallUserPage">By Mall</a>
+                    </div>
+                </div>           
+            </div>
+            <div class="login" style="margin-right: 30px"><a href="loginpage" style="text-decoration: none; color:white">Login</a></div>
+        </div>
+
+        <div class="main">
+            <div class="transbox">
+                <div class="main-nav-config">
+                    <div id="showing">
+                        <a style="font-size: 24px">IN THEATERS</a>
+                    </div>
+                </div>
+                <div class="places">
+                    <form action="cinemasUserPage" method="get" enctype="multipart/form-data">
+                        <input type="submit" name="mall" class="mall" value="SM Mall of Asia" readonly>
+                        <input type="submit" name="mall" class="mall" value="Makati Mall" readonly>
+                        <input type="submit" name="mall" class="mall" value="Ayala Malls Circuit" readonly>
+                        <input type="submit" name="mall" class="mall" value="Greenbelt" readonly>
+                        <input type="submit" name="mall" class="mall" value="Power Plant Mall" readonly>
+                        <input type="submit" name="mall" class="mall" value="Cash and Carry" readonly>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

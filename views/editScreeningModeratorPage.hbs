@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <link href="editScreeningModeratorPage.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class=navigation>
+            <div id="brand">
+                <a href = "brand_click"><img src="logo.png" height=60px; width=120px;/></a>
+                
+                <div class="dropdown">
+                    <div class="movies">Movies</div>
+                    <div class="moviesmenu">
+                        <a href="nowShowingModeratorPage">Now Showing</a>
+                        <a href="upcomingMoviesModeratorPage">Upcoming Movies</a>
+                    </div>
+                </div>
+                
+                <div class="cinemas"><a href="cinemasmoderator" style="text-decoration: none; color:white">Cinemas</a></div>
+                
+                <div class="dropdown">
+                    <div class="screening">Screening</div>
+                    <div class="screeningmenu">
+                        <a href="viewScreeningModeratorPage">View Screening</a>
+                        <a href="addScreeningModeratorPage">Add Screening</a>
+                    </div>
+                </div>              
+            </div>
+            <div class="dropdown">
+                <span class="moderator">Welcome, {{username}}! ▼</span>
+                <div class="logout">
+                    <a href="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main">
+            <div class="transbox">
+                <form action="editscreen" method="post" enctype="multipart/form-data">
+                    <table>
+                        <tr>
+                            <td colspan="2" style="font-size: 30px; text-align: left; padding: 10px;">Edit Screening</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Movies: </td>
+                            <td>
+                                <select style="height:30px; width:350px;" name="movie">
+                                    {{#each movies}}
+                                        <option>{{title}}</option>
+                                    {{/each}}
+                                </select>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Showtime: </td>
+                            <td>
+                                <input type="datetime-local" name="showtime" style="height:30px; width:350px;">
+                            </td>
+                        </tr>
+                        
+                    </table>
+                    <input type="hidden" name="id" id="editid" value="{{movid}}"> 
+                    <input type="submit" value="Save" style="margin-left: 38%; width: 100px; height: 30px; margin-top: 5px;">
+                </form>
+            </div>
+        </div>
+        
+    </body>
+</html>

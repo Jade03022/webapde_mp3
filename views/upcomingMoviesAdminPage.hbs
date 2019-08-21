@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <link href="viewMoviesAdminPage.css" rel="stylesheet">
+        <script>
+            function formatDate(date){
+                var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November','December'];
+
+                var formattedDate = days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
+
+                document.write(formattedDate)
+            }
+        </script>
+    </head>
+    <body>
+        <div class=navigation>
+            <div id="brand">
+                <a href = "brand_click"><img src="logo.png" height=60px; width=120px;/></a>
+                
+                <div class="dropdown">
+                    <div class="movies">Movies</div>
+                    <div class="moviesmenu">
+                        <a href="nowShowingAdminPage">Now Showing</a>
+                        <a href="upcomingMoviesAdminPage">Upcoming Movies</a>
+                    </div>
+                </div>
+                
+                <div class="cinemas"><a href="cinemasAdminPage" style="text-decoration: none; color: white">Cinemas</a></div>
+                
+                <div class="dropdown">
+                    <div class="screening">Admin</div>
+                    <div class="screeningmenu">
+                        <a href="viewMoviesAdminPage">View Movies</a>
+                        <a href="addMoviesAdminPage">Add Movie</a>
+                    </div>
+                </div>              
+            </div>
+            <div class="dropdown">
+                <span class="moderator">Welcome, {{username}}! ▼</span>
+                <div class="logout">
+                    <a href="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main-nav-config">
+                <div id="showing">
+                    <a style="font-size: 24px">UPCOMING MOVIES</a>
+                </div>
+            </div>
+            
+            {{#each movies}}
+            <div class="listOfCinemas">
+                <div class="releasedate">{{release_date}}</div>
+                <div class="cinema">
+                    <div class="screening">
+                        <div class="movie">
+                            <div class="img"><img src="{{image}}" id="movieimg"></div>
+                            <div class="details">
+                                <div class="top">
+                                    <div class="top1">
+                                        <span class = "movie_title">{{title}}</span><br>
+                                        <span class = "rated_genre_duration"><img src="{{rated}}" id="ratedimg"> l {{genre}} l {{duration}}</span>
+                                    </div>
+                                    <div class="top2">
+                                        <span class = "summary">{{description}}</span>
+                                    </div>
+                                    <div class="top3">
+                                        <span class = "critic_rating">Critic's rating - </span><span class = "rating">{{mpaa_rating}}</span><br>
+                                        <span class = "user_rating">User's rating - </span><span class = "rating">{{star_rating}}</span>
+                                    </div>
+                                </div>
+                                <div class="middle">
+                                    <div class="casts">
+                                        <span class = "tag">Main Cast</span><br>
+                                        <span class = "cast_people">{{casts}}</span>
+                                    </div>
+                                    <div class="director">
+                                        <span class = "tag">Director</span><br>
+                                        <span class = "director_people">{{director}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+
+            </div>
+        </div>
+
+    </body>
+</html>

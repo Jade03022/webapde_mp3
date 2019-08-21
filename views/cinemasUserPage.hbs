@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <link href="cinemasUserPage.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class=navigation>
+            <div id="brand">
+                <a href = "brand_click"><img src="logo.png" height=60px; width=120px;/></a>
+                
+                <div class="dropdown">
+                    <div class="movies">Movies</div>
+                    <div class="moviesmenu">
+                        <a href="nowShowingUserPage">Now Showing</a>
+                        <a href="upcomingMoviesUserPage">Upcoming Movies</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <div class="cinemas"><a style="text-decoration: none; color:white">Cinemas</a></div>
+                    <div class="cinemasmenu">
+                        <a href="cinemasByCityUserPage">By City</a>
+                        <a href="cinemasByMallUserPage">By Mall</a>
+                    </div>
+                </div>           
+            </div>
+            <div class="login" style="margin-right: 30px"><a href="loginpage" style="text-decoration: none; color:white">Login</a></div>
+        </div>
+
+        <div class="main">
+            <div class="main-nav-config">
+                <div id="showing">
+                    <a style="font-size: 24px">NOW SHOWING</a>
+                    <a style="font-size: 16px; padding-left: 30px">{{date}}</a>
+                </div>
+                <div id="searchbar">
+                   <a id="search">Search: 
+                       <form action="/searchUserMall" method="post" enctype="multipart/form-data">
+                           <input type="date" name="dater">
+                           <input type="hidden" name="mally" value="{{mally}}">
+                           <input type="submit">
+                       </form>
+                   </a><br>
+                </div>
+            </div>
+            
+            {{#each cinemas}}
+            <div class="listOfCinemas">
+                <div class="cinema">
+                    <div class="cinemaname">{{name}}</div>
+                    {{#movies}}
+                    <div class="screening">
+                        <div class="movie">
+                            <div class="img"><img src="{{image}}" id="movieimg"></div>
+                            <div class="details">
+                                <div class="top">
+                                    <div class="top1">
+                                        <span class = "movie_title">{{title}}</span><br>
+                                        <span class = "rated_genre_duration"><img src="{{rated}}" id="ratedimg"> l {{genre}} l {{duration}}</span>
+                                    </div>
+                                    <div class="top2">
+                                        <span class = "summary">{{description}}</span>
+                                    </div>
+                                    <div class="top3">
+                                        <span class = "critic_rating">Critic's rating - </span><span class = "rating">{{mpaa_rating}}</span><br>
+                                        <span class = "user_rating">User's rating - </span><span class = "rating">{{star_rating}}</span>
+                                    </div>
+                                </div>
+                                <div class="middle">
+                                    <div class="casts">
+                                        <span class = "tag">Main Cast</span><br>
+                                        <span class = "cast_people">{{casts}}</span>
+                                    </div>
+                                    <div class="director">
+                                        <span class = "tag">Director</span><br>
+                                        <span class = "director_people">{{director}}</span>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <span class = "tag">Showtime</span>
+                                    <div class = "showtime">
+                                        {{#schedules}}
+                                            {{#each showtimes}}
+                                                <div class = "time">
+                                                    {{this}}
+                                                </div>
+                                            {{/each}}
+                                        {{/schedules}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/movies}}
+                </div>
+            </div>
+            {{/each}}
+            
+        </div>
+    </body>
+</html>
